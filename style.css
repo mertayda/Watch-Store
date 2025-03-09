@@ -83,8 +83,6 @@ h5 {
   background-color: var(--primary-color);
 }
 
-.btn
-
 /* Header */
 
 header {
@@ -197,7 +195,7 @@ header {
 
 .watch {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -225,7 +223,7 @@ header {
 
 .featured-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -307,7 +305,7 @@ header {
 
 .story-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   align-items: center;
   gap: 3rem;
 }
@@ -334,7 +332,7 @@ header {
   top: 5rem;
   right: 5rem;
   background-color: var(--primary-color);
-  width: 100vw;
+  width: 100%;
   height: 100%;
   z-index: -2;
 }
@@ -389,7 +387,7 @@ header {
 
 .arrivals-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
 }
 
@@ -468,7 +466,7 @@ header {
 
 .reviews-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -511,8 +509,15 @@ header {
 .reviews-img {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
+  border-radius: 12px;
+}
+
+.reviews-img img {
+  width: 100%;
+  height: auto;
+  display: block;
   border-radius: 12px;
 }
 
@@ -540,14 +545,50 @@ header {
 .newsletter-content {
   display: flex;
   justify-content: space-between;
+  padding: 1rem;
 }
 
 .newsletter-content .btn {
-  padding: 0.2rem 3rem;
+  align-self: center;
   width: auto;
 }
 
+.newsletter-content .btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.footer {
+  padding: 5rem 1rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.footer-content h1 {
+  font-size: var(--font-size-h2);
+  margin-bottom: 1.3rem;
+}
+
+.footer-content ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 1rem;
+  padding: 1rem;
+}
+
 @media (max-width: 575.98px) {
+  .watch,
+  .featured-content,
+  .story-container,
+  .reviews-content {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -624,5 +665,42 @@ header {
 
   .menu-toggle {
     display: block;
+  }
+
+  .watch-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: auto;
+  }
+
+  .watch-buttons button {
+    align-self: center;
+  }
+
+  .newsletter-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .newsletter-content .btn {
+    align-self: normal;
+  }
+
+  .watch,
+  .featured-content,
+  .story-containe,
+  .reviews-content {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 991.98px) {
+  .watch,
+  .featured-content,
+  .story-containe,
+  .reviews-content {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
